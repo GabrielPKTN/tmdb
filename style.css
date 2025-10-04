@@ -1,5 +1,6 @@
 :root {
-    --primary-color: #FF4D00
+    --font-color: #FF4D00;
+    --primary-color: #38364E;
 }
 
 *{
@@ -16,9 +17,62 @@ body{
 
 header {
     display: flex;
-    color: var(--primary-color);
+    color: var(--font-color);
     justify-content: center;
     align-items: center;
+}
+
+header nav ul li i {
+    padding-left: 10px;
+}
+
+header nav {
+    background-color: var(--primary-color);
+}
+
+header nav ul li a {
+    display: flex;
+    color: var(--font-color);
+    text-decoration: none;
+    font-family: 'Roboto Condesed', sans-serif;
+    padding: 20px;
+    transition: ease-in-out 0.3s;
+}
+
+header nav ul li a:hover {
+    background-color: var(--font-color);
+    color: black;
+}
+
+.drop-hover {
+    position: relative;
+}
+
+.drop {
+    width: 100%;
+    position: absolute;
+    background-color: #39384c;
+    height: 0;
+    overflow: hidden;
+    transition: ease-in-out 0.3s;
+}
+
+.drop-hover:hover .drop {
+    height: 300px;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--font-color);
+    border-radius: 5px;
 }
 
 .logo {
