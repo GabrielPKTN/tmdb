@@ -1,0 +1,48 @@
+:root {
+    --primary-color: #FF4D00
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(30deg, #070045, #38364E 100%);
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    color: var(--primary-color);
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    text-align: center;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo h1 {
+    height: 40px;
+    font-family: 'Monoton', sans-serif;
+    font-weight: 100;
+    cursor: pointer;
+}
+
+.logo span {
+    font-family: 'Roboto Condesed', sans-serif;
+    cursor: default;
+}
+
+header i {
+    height: auto;
+}
+
+
+
