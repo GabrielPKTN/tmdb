@@ -11,8 +11,8 @@
 
 body{
     background: linear-gradient(30deg, #070045, #38364E 100%);
-    width: 100dvw;
-    height: 100dvh;
+    width: 100%;
+    height: auto;
 }
 
 header {
@@ -70,11 +70,11 @@ header nav ul li a:hover {
 }
 
 ::-webkit-scrollbar {
-    width: 15px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 5px;
+    background: var(--primary-color);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -131,6 +131,7 @@ header nav ul li a:hover {
     width: 90%;
     display: flex;
     flex-direction: column;
+    color: var(--font-color);
 }
 
 .logo h1 {
@@ -153,7 +154,7 @@ header i {
 
 main {
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 
 .container-slideshow {
@@ -163,23 +164,20 @@ main {
     height: auto;
     width: 100%;
     justify-content: center;
-    border-radius: var(--border-default);
+    height: 300px;
 }
 
 .container-items {
     position: absolute;
     width: 100%;
-    border-radius: var(--border-default);
+    height: 90%;
     display: flex;
     overflow: hidden;
 }
 
-
-
 .item {
     min-width: 100%;
     height: 100%;
-    border-radius: var(--border-default);
     transition: ease-in-out 0.3s;
 }
 
@@ -189,6 +187,109 @@ main {
     object-fit: cover;
 }
 
-.item:first-child {
-    margin-left: -100%;
+.filmes {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-top: 20px;
+}
+
+.filme {
+    color: var(--font-color);
+    font-family: "Roboto Condesed", sans-serif;
+    height: 12rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.filme span {
+    padding-left: 30px;
+    
+}
+
+.container-card-filmes {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.container-card-filmes button {
+    background-color: transparent;
+    border: none;
+    color: #FFF;
+    font-family: "Lilita One", sans-serif;
+    width: 90px;
+    border-radius: 20px;
+    font-size: 14px;
+    box-shadow: black 2px 2px 8px;
+}
+
+.imagem {
+    background-color: black;
+    width: 90px;
+    height: 130px;
+}
+
+footer {
+    width: 100%;
+    padding-top: 25%;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+.redes-sociais {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: var(--font-color);
+    justify-content: space-evenly;
+    border-right: solid 2px var(--font-color);
+    
+}
+
+.container-redes-sociais {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-size: 16px;
+    margin-left: 20px;
+
+}
+
+.container-icon-link a {
+    font-family: "Roboto Condesed", sans-serif;
+    color: var(--font-color);
+    text-align: center;
+}
+
+.links-importantes {
+    width: 50%;
+    
+}
+
+.links-importantes ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.links li a {
+    color: var(--font-color);
+    font-family: "Roboto Condesed", sans-serif;
+} 
+
+@media (max-width: 480px) {
+    
 }

@@ -7,10 +7,10 @@
     <link rel="stylesheet" href="path/to/fontawesome/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Monoton&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
-    <script src="./menu-mobile.js" defer></script>
-    <script src="./slider-info.js" defer></script>
+    <script src="./functions/menu-mobile.js" defer></script>
+    <script src="./functions/slider-info.js" defer></script>
     <title>TMDB</title>
 </head>
 <body>
@@ -61,15 +61,116 @@
 
     </header>
     <main>
-
-        
+    
         <div class="container-slideshow">
             <div class="container-items" id="container-items"></div>
         </div>
+
+        <section class="filmes">
+            <div class="filme lancamento" id="lancamento">
+                <span>LANÇAMENTOS</span>
+                
+                <div class="container-card-filmes">
+                    <div class="imagem"></div>
+                    <div class="imagem"></div>
+                    <div class="imagem"></div>
+                    <button>VER MAIS...</button>
+                </div>
+                
+            </div>
+            <div class="filme acao" id="acao">
+                <span>AÇÃO EXPLOSIVA!!!</span>
+                
+                <div class="container-card-filmes">
+                    <div class="imagem"></div>
+                    <div class="imagem"></div>
+                    <div class="imagem"></div>
+                    <button>VER MAIS...</button>
+                </div>
+
+            </div>
+            <div class="filme animacao" id="animacao">
+
+                <span>ANIMAÇÃO</span>
+                
+                <div class="container-card-filmes">
+                    <div class="imagem"></div>
+                    <div class="imagem"></div>
+                    <div class="imagem"></div>
+                    <button>VER MAIS...</button>
+                </div>
+            </div>
+
+            <div class="filme terror" id="terror">
+
+               <span>TERROR</span>
+                
+                <div class="container-card-filmes">
+                    <div class="imagem"></div>
+                    <div class="imagem"></div>
+                    <div class="imagem"></div>
+                    <button>VER MAIS...</button>
+                </div>
+            </div>
+        </section>
         
         
     </main>
     <footer>
+
+        <div class="redes-sociais">
+
+            <div class="logo">
+                <h1>TMDB</h1>
+                <span>O lugar do seu entretenimento!</span>
+            </div>
+
+            <div class="container-redes-sociais">
+               
+                <div class="container-icon-link">
+                    <i class="fa-brands fa-instagram"></i>
+                    <a href="">www.instagram.com/tmdb</a>
+                </div>
+                <div class="container-icon-link">
+                    <i class="fa-brands fa-facebook"></i>
+                    <a href="">www.facebook.com/tmdb</a>
+                </div>
+                <div class="container-icon-link">
+                    <i class="fa-brands fa-twitter"></i>
+                    <a href="">www.twitter.com/tmdb</a>
+                </div>
+                <div class="container-icon-link">
+                    <i class="fa-brands fa-youtube"></i>
+                    <a href="">www.youtube.com/tmdb</a>
+                </div>
+                    
+            </div>
+            
+
+        </div>
+        <div class="links-importantes">
+            <ul>
+                <div class="links">
+                    <li><a href="">Perguntas frequentes</a></li>
+                    <li><a href="">Central de ajuda</a></li>
+                    <li><a href="">Conta</a></li>
+                    <li><a href="">Media center</a></li>
+                    <li><a href="">Relações com investidores</a></li>
+                    <li><a href="">Carreiras</a></li>
+                    <li><a href="">Resgatar cartão pré-pago</a></li>
+                </div>
+                <div class="links">
+                    <li><a href="">Formas de assistir</a></li>
+                    <li><a href="">Termos de uso</a></li>
+                    <li><a href="">Privacidade</a></li>
+                    <li><a href="">Preferências de cookies</a></li>
+                    <li><a href="">Informações de cookies</a></li>
+                    <li><a href="">Informações corporativas</a></li>
+                    <li><a href="">Entre em contato</a></li>
+                    <li><a href="">Teste de velocidade</a></li>
+                </div>
+            </ul>
+        </div>
 
     </footer>
 </body>
