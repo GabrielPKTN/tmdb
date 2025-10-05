@@ -11,8 +11,8 @@
 
 body{
     background: linear-gradient(30deg, #070045, #38364E 100%);
-    width: 100vw;
-    height: 100vh;
+    width: 100dvw;
+    height: 100dvh;
 }
 
 header {
@@ -84,7 +84,8 @@ header nav ul li a:hover {
 
 #menu-lateral {
     transform: translateX(-100%);
-    transition: ease-in-out 0.3s;   
+    transition: ease-in-out 0.3s;
+    z-index: 99;
 }
 
 #menu-lateral.active {
@@ -117,10 +118,12 @@ header nav ul li a:hover {
 
 #mobile-menu {
     cursor: pointer;
+    font-size: 20px;
 }
 
 #mobile-close-menu {
     cursor: pointer;
+    font-size: 20px;
 }
 
 .logo {
@@ -131,13 +134,15 @@ header nav ul li a:hover {
 }
 
 .logo h1 {
-    height: 40px;
+    height: 50px;
+    font-size: 40px;
     font-family: 'Monoton', sans-serif;
     font-weight: 100;
     cursor: pointer;
 }
 
 .logo span {
+    font-size: 16px;
     font-family: 'Roboto Condesed', sans-serif;
     cursor: default;
 }
@@ -146,5 +151,44 @@ header i {
     height: auto;
 }
 
+main {
+    width: 100%;
+    height: auto;
+}
+
+.container-slideshow {
+    padding-top: 20px;
+    display: flex;
+    position: relative;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+    border-radius: var(--border-default);
+}
+
+.container-items {
+    position: absolute;
+    width: 100%;
+    border-radius: var(--border-default);
+    display: flex;
+    overflow: hidden;
+}
 
 
+
+.item {
+    min-width: 100%;
+    height: 100%;
+    border-radius: var(--border-default);
+    transition: ease-in-out 0.3s;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item:first-child {
+    margin-left: -100%;
+}
