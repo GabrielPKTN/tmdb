@@ -9,13 +9,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+    <script src="./menu-mobile.js" defer></script>
     <title>TMDB</title>
 </head>
 <body>
     <header>
-
-        <nav>
+        
+        <nav id="menu-lateral">
+            <div class="header-menu-lateral">
+                <i class="fa-solid fa-x" id="mobile-close-menu"></i>
+                <div class="logo">
+                    <h1>TMDB</h1>
+                </div>
+                <input type="text" name="" id="input" placeholder="Pesquise seu filme aqui...">
+            </div>
             <ul>
+                <li><a href="#">LOGIN</a></li>
+                <li><a href="#">CADASTRE-SE</a></li>
                 <li class="drop-hover"><a href="#">CATEGORIAS <i class="fa-solid fa-chevron-down"></i></a>
                     <div class="drop">
                         <a href="">AÇÃO</a>
@@ -42,7 +52,7 @@
             </ul>
         </nav>
 
-        <i class="fa-sharp fa-solid fa-bars"></i>   
+        <i class="fa-sharp fa-solid fa-bars" id="mobile-menu"></i>   
         <div class="logo">
             <h1>TMDB</h1>
             <span>O lugar do seu entretenimento!</span>

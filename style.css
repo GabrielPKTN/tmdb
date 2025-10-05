@@ -27,7 +27,13 @@ header nav ul li i {
 }
 
 header nav {
+    position: absolute;
+    display: block;
     background-color: var(--primary-color);
+    left: 0;
+    height: 100%;
+    width: 70dvw;
+    top: 0;
 }
 
 header nav ul li a {
@@ -36,6 +42,7 @@ header nav ul li a {
     text-decoration: none;
     font-family: 'Roboto Condesed', sans-serif;
     padding: 20px;
+    font-size: 24px;
     transition: ease-in-out 0.3s;
 }
 
@@ -73,6 +80,47 @@ header nav ul li a:hover {
 ::-webkit-scrollbar-thumb {
     background-color: var(--font-color);
     border-radius: 5px;
+}
+
+#menu-lateral {
+    transform: translateX(-100%);
+    transition: ease-in-out 0.3s;   
+}
+
+#menu-lateral.active {
+    transform: translateX(0)
+}
+
+.header-menu-lateral {
+    display: flex;
+    height: 5rem;
+    margin: 10px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.header-menu-lateral .logo {
+    width: auto;
+    font-size: 20px;
+}
+
+#input {
+    height: 24px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+#input::placeholder {
+    padding-left: 5px;
+}
+
+#mobile-menu {
+    cursor: pointer;
+}
+
+#mobile-close-menu {
+    cursor: pointer;
 }
 
 .logo {
