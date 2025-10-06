@@ -202,11 +202,11 @@ main {
     flex-direction: column;
     width: 100%;
     justify-content: space-evenly;
+    overflow: hidden;
 }
 
 .filme span {
-    padding-left: 30px;
-    
+    padding-left: 30px;   
 }
 
 .container-card-filmes {
@@ -214,6 +214,7 @@ main {
     flex-direction: row;
     width: 100%;
     justify-content: space-evenly;
+    gap: 10px;
 }
 
 .container-card-filmes button {
@@ -227,11 +228,26 @@ main {
     box-shadow: black 2px 2px 8px;
 }
 
+.container-card-filmes .imagem:nth-child(9),
+.container-card-filmes .imagem:nth-child(8),
+.container-card-filmes .imagem:nth-child(7),
+.container-card-filmes .imagem:nth-child(6),
+.container-card-filmes .imagem:nth-child(5),
+.container-card-filmes .imagem:nth-child(4) {
+    display: none;
+}
+
 .imagem {
     background-color: black;
     width: 90px;
     height: 130px;
 }
+
+.imagem img {
+    width: 100%;
+    object-fit: cover;
+}
+
 
 footer {
     width: 100%;
@@ -290,6 +306,3 @@ footer {
     font-family: "Roboto Condesed", sans-serif;
 } 
 
-@media (max-width: 480px) {
-    
-}
