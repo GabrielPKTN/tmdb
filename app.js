@@ -231,7 +231,7 @@ function manipulaDadosFilmeComedia(json) {
 // **************************************Terror
 
 async function jsonFilmesTerror() {
-    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=35&language=pt-BR`
+    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=27&language=pt-BR`
     const response = await fetch(url)
     const data = await response.json()
 
