@@ -26,14 +26,42 @@ function manipulaDadosFilme(json) {
     const divBackgroundFilme = document.createElement("div")
     const imgBackgroundFilme = document.createElement("img")
     
+    const divContainerInfoFilmeSlider = document.createElement("div")
+    const divInfoFilme = document.createElement("div")
+    const divSinopseClassificacao = document.createElement("div")
+    const divInfoImgSlide = document.createElement("div")
+    const imgInfoSlide = document.createElement("img")
+    const sinopse = document.createElement("p")
+    const divClassificacaoFilmeSlide = document.createElement("div")
+
     divBackgroundFilme.classList.add("item")
+
+    divContainerInfoFilmeSlider.classList.add("container-slide-info-filme")
+    divInfoFilme.classList.add("info-filme")
+    divSinopseClassificacao.classList.add("sinopse-classificacao")
+    divInfoImgSlide.classList.add("img-filme-slideshow")
+    sinopse.classList.add("sinopse-filme-slideshow")
+    divClassificacaoFilmeSlide.classList.add("classificacao-filme-slideshow")
+    
 
     let imgBackground = json.backdrop_path
     imgBackgroundFilme.src =  `https://image.tmdb.org/t/p/w500/${imgBackground}`
 
-    sliderItems.appendChild(divBackgroundFilme)
-    divBackgroundFilme.appendChild(imgBackgroundFilme)
+    let posterFilm = json.poster_path
+    imgInfoSlide.src = `https://image.tmdb.org/t/p/w200/${posterFilm}`
 
+    sinopse.textContent = json.overview
+
+    sliderItems.appendChild(divBackgroundFilme)
+    divBackgroundFilme.appendChild(divContainerInfoFilmeSlider)
+    divContainerInfoFilmeSlider.appendChild(divInfoFilme)
+    divInfoFilme.appendChild(divSinopseClassificacao)
+    divSinopseClassificacao.appendChild(divInfoImgSlide)
+    divInfoImgSlide.appendChild(imgInfoSlide)
+    divSinopseClassificacao.appendChild(sinopse)
+    divSinopseClassificacao.appendChild(divClassificacaoFilmeSlide)
+    divBackgroundFilme.appendChild(imgBackgroundFilme)
+    
 }
 
 // **************************************
