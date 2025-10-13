@@ -5,7 +5,7 @@
 const apiKey = "3d789a9185a6ba77b7362aae44dd32ea"
 
 async function jsonFilmes() {
-    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR`
+    const url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
     const response = await fetch(url)
     const data = await response.json()
 
@@ -50,7 +50,16 @@ function manipulaDadosFilme(json) {
     let posterFilm = json.poster_path
     imgInfoSlide.src = `https://image.tmdb.org/t/p/w200/${posterFilm}`
 
-    sinopse.textContent = json.overview
+    sinopse.textContent = json.overview 
+
+    const limiteCaracteresSinopse = 100
+
+    let textoSinopse = sinopse.textContent
+    if (textoSinopse.length > limiteCaracteresSinopse) {
+        sinopse.textContent = textoSinopse.substring(0, limiteCaracteresSinopse) + "..."
+    }
+
+
 
     sliderItems.appendChild(divBackgroundFilme)
     divBackgroundFilme.appendChild(divContainerInfoFilmeSlider)
