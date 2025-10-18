@@ -196,7 +196,6 @@ main {
     position: relative;
     display: flex;
     overflow: hidden;
-    overflow-x: auto;
 }
 
 .img-filme-slideshow {
