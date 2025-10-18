@@ -33,6 +33,7 @@ function manipulaDadosFilme(json) {
     const imgInfoSlide = document.createElement("img")
     const sinopse = document.createElement("p")
     const divClassificacaoFilmeSlide = document.createElement("div")
+    const divClassificacao = document.createElement("div")
 
     divBackgroundFilme.classList.add("item")
 
@@ -42,7 +43,7 @@ function manipulaDadosFilme(json) {
     divInfoImgSlide.classList.add("img-filme-slideshow")
     sinopse.classList.add("sinopse-filme-slideshow")
     divClassificacaoFilmeSlide.classList.add("classificacao-filme-slideshow")
-    
+    divClassificacao.classList.add("classificacao-slideshow")
 
     let imgBackground = json.backdrop_path
     imgBackgroundFilme.src =  `https://image.tmdb.org/t/p/w500/${imgBackground}`
@@ -52,14 +53,12 @@ function manipulaDadosFilme(json) {
 
     sinopse.textContent = json.overview 
 
-    const limiteCaracteresSinopse = 100
+    const limiteCaracteresSinopse = 150
 
     let textoSinopse = sinopse.textContent
     if (textoSinopse.length > limiteCaracteresSinopse) {
         sinopse.textContent = textoSinopse.substring(0, limiteCaracteresSinopse) + "..."
     }
-
-
 
     sliderItems.appendChild(divBackgroundFilme)
     divBackgroundFilme.appendChild(divContainerInfoFilmeSlider)
@@ -69,6 +68,47 @@ function manipulaDadosFilme(json) {
     divInfoImgSlide.appendChild(imgInfoSlide)
     divSinopseClassificacao.appendChild(sinopse)
     divSinopseClassificacao.appendChild(divClassificacaoFilmeSlide)
+    divClassificacaoFilmeSlide.appendChild(divClassificacao)
+
+    function defineClassificacaoFilme() {
+
+        const classificacaoMaxima = 5
+        const classificacaoFilme = (json.vote_average.toFixed(0) / 2).toFixed(0)
+
+        for (let i = 1; i <= classificacaoFilme; i++) {
+
+            const estrelaPreenchida = document.createElement("i")
+            estrelaPreenchida.classList.add("fa-solid")
+            estrelaPreenchida.classList.add("fa-star")
+
+            divClassificacao.appendChild(estrelaPreenchida)
+
+        }
+
+        /* 
+        Por algum motivo, quando modificava o atributo classificacaoFilme
+        diretamente, tinha problemas com promisses, tentei criar uma cópia
+        com json.parse, e stringify mas ainda sim não tive êxito, somente
+        quando fiz com que uma variavel recebesse o valor de classificacaoFilme.
+        */ 
+       
+        let copyClassificacaoFilme = classificacaoFilme
+
+        while (copyClassificacaoFilme < classificacaoMaxima) {
+            
+            const estrelaVazia = document.createElement("i")
+            estrelaVazia.classList.add('fa-solid')
+            estrelaVazia.classList.add('fa-star')
+            estrelaVazia.classList.add('estrelaVazia')
+            
+            divClassificacao.appendChild(estrelaVazia)
+            copyClassificacaoFilme++
+
+        }
+
+    } 
+    defineClassificacaoFilme()
+
     divBackgroundFilme.appendChild(imgBackgroundFilme)
     
 }

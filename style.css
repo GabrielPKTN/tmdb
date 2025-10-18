@@ -225,6 +225,14 @@ main {
     margin-left: 5px;
 }
 
+.fa-solid.fa-star {
+    color: #DB9600;
+}
+
+.fa-solid.fa-star.estrelaVazia {
+    color: #474747;
+}
+
 .classificacao-indicativa-slideshow {
     width: 10px;
 }
