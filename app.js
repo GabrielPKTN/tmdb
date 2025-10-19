@@ -215,10 +215,10 @@ async function retornaDadosFilmesLancamentos() {
 
     const json = await jsonFilmesLancamentos()
 
-    manipulaDadosFilmeLancamento(json)
+    manipulaDadosFilmeLancamentos(json)
 }
 
-function manipulaDadosFilmeLancamento(json) {
+function manipulaDadosFilmeLancamentos(json) {
 
     const listaFilmes = []
 
@@ -261,9 +261,6 @@ function manipulaDadosFilmeLancamento(json) {
         divFilme.appendChild(posterFilm)
 
     }
-
-    const buttonVerMais = document.createElement("button")
-    buttonVerMais.textContent = "VER MAIS..."
 
     containerCardFilmes.appendChild(buttonVerMais)
 
@@ -335,6 +332,11 @@ function manipulaDadosFilmeAcao(json) {
     const buttonVerMais = document.createElement("button")
     buttonVerMais.textContent = "VER MAIS..."
 
+        buttonVerMais.addEventListener('click', () => {
+        window.location.href = `filmspage.html?genre-film=28`
+
+    })
+
     containerCardFilmes.appendChild(buttonVerMais)
 
 }
@@ -404,6 +406,11 @@ function manipulaDadosFilmeAnimacao(json) {
     const buttonVerMais = document.createElement("button")
     buttonVerMais.textContent = "VER MAIS..."
 
+        buttonVerMais.addEventListener('click', () => {
+        window.location.href = `filmspage.html?genre-film=16`
+
+    })
+
     containerCardFilmes.appendChild(buttonVerMais)
 
 }
@@ -472,6 +479,11 @@ function manipulaDadosFilmeTerror(json) {
 
     const buttonVerMais = document.createElement("button")
     buttonVerMais.textContent = "VER MAIS..."
+
+    buttonVerMais.addEventListener('click', () => {
+        window.location.href = `filmspage.html?genre-film=27`
+
+    })
 
     containerCardFilmes.appendChild(buttonVerMais)
     addClickFilmes()
