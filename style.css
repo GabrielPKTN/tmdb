@@ -164,7 +164,6 @@ main {
 
 .container-slider {
     padding-top: 10px;
-    height: 16rem;
 }
 
 .container-slideshow {
@@ -200,6 +199,7 @@ main {
 
 .img-filme-slideshow {
     margin-left: 10px;
+    height: 100%;
     margin-bottom: 5px;
     width: 8%;
     background-color: #000000;
@@ -207,6 +207,7 @@ main {
 
 .img-filme-slideshow img {
     width: 100%;
+    height: 100%;
 }
 
 .classificacao-filme-slideshow {
@@ -314,7 +315,15 @@ main {
     display: none;
 }
 
+.filmeClick {
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
 .imagem {
+    position: relative;
     background-color: black;
     width: 90px;
     height: 130px;

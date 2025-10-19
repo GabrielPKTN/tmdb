@@ -243,8 +243,15 @@ function manipulaDadosFilmeLancamento(json) {
 
         const divFilme = document.createElement('div')
         divFilme.classList.add('imagem')
+        divFilme.id = filme.id
 
         containerCardFilmes.appendChild(divFilme)
+
+        const divClickFilme = document.createElement('div')
+        divClickFilme.classList.add('filmeClick')
+        divClickFilme.id = filme.id
+
+        divFilme.appendChild(divClickFilme)
 
         const posterFilm = document.createElement('img')
 
@@ -259,7 +266,6 @@ function manipulaDadosFilmeLancamento(json) {
     buttonVerMais.textContent = "VER MAIS..."
 
     containerCardFilmes.appendChild(buttonVerMais)
-
 
 }
 
@@ -308,8 +314,15 @@ function manipulaDadosFilmeAcao(json) {
 
         const divFilme = document.createElement('div')
         divFilme.classList.add('imagem')
+        divFilme.id = filme.id
 
         containerCardFilmes.appendChild(divFilme)
+
+        const divClickFilme = document.createElement('div')
+        divClickFilme.classList.add('filmeClick')
+        divClickFilme.id = filme.id
+
+        divFilme.appendChild(divClickFilme)
 
         const posterFilm = document.createElement('img')
 
@@ -330,7 +343,7 @@ function manipulaDadosFilmeAcao(json) {
 
 // **************************************Animação
 
-async function jsonFilmesComedia() {
+async function jsonFilmesAnimacao() {
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=16&language=pt-BR`
     const response = await fetch(url)
     const data = await response.json()
@@ -338,15 +351,15 @@ async function jsonFilmesComedia() {
     return data.results
 }
 
-async function retornaDadosFilmesComedia() {
+async function retornaDadosFilmesAnimacao() {
 
-    const json = await jsonFilmesComedia()
+    const json = await jsonFilmesAnimacao()
 
-    manipulaDadosFilmeComedia(json)
+    manipulaDadosFilmeAnimacao(json)
 
 }
 
-function manipulaDadosFilmeComedia(json) {
+function manipulaDadosFilmeAnimacao(json) {
 
     const listaFilmes = []
 
@@ -373,6 +386,12 @@ function manipulaDadosFilmeComedia(json) {
         divFilme.classList.add('imagem')
 
         containerCardFilmes.appendChild(divFilme)
+
+        const divClickFilme = document.createElement('div')
+        divClickFilme.classList.add('filmeClick')
+        divClickFilme.id = filme.id
+
+        divFilme.appendChild(divClickFilme)
 
         const posterFilm = document.createElement('img')
 
@@ -437,6 +456,12 @@ function manipulaDadosFilmeTerror(json) {
 
         containerCardFilmes.appendChild(divFilme)
 
+        const divClickFilme = document.createElement('div')
+        divClickFilme.classList.add('filmeClick')
+        divClickFilme.id = filme.id
+
+        divFilme.appendChild(divClickFilme)
+
         const posterFilm = document.createElement('img')
 
         const imagemPoster = filme.poster_path
@@ -449,14 +474,23 @@ function manipulaDadosFilmeTerror(json) {
     buttonVerMais.textContent = "VER MAIS..."
 
     containerCardFilmes.appendChild(buttonVerMais)
-
+    addClickFilmes()
 }
 
 // **************************************
 
+function addClickFilmes() {
+    const filmes = document.querySelectorAll(".filmeClick")
+    filmes.forEach((filme) => {
+        filme.addEventListener('click', () => {
+            //Redireciona o usuário para a página do filme que ele clicou
+            window.location.href = `filmpage.html?id=${filme.id}`
+        })
+    })
+}
 
 retornaDadosFilmes()
 retornaDadosFilmesLancamentos()
 retornaDadosFilmesAcao()
-retornaDadosFilmesComedia()
+retornaDadosFilmesAnimacao()
 retornaDadosFilmesTerror()
