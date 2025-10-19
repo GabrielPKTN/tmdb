@@ -1,6 +1,8 @@
 :root {
     --font-color: #FF4D00;
     --primary-color: #38364E;
+    --monoton-font: 'Monoton', sans-serif;
+    --roboto-font: 'Roboto Condesed', sans-serif;
 }
 
 *{
@@ -275,7 +277,7 @@ main {
 .filme {
     color: var(--font-color);
     font-family: "Roboto Condesed", sans-serif;
-    height: 12rem;
+    height: 14rem;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -284,7 +286,8 @@ main {
 }
 
 .filme span {
-    padding-left: 30px;   
+    padding-left: 30px;
+    padding-block: 20px; 
 }
 
 .container-card-filmes {
@@ -347,6 +350,7 @@ footer {
     width: 50%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
     color: var(--font-color);
     justify-content: space-evenly;
@@ -393,7 +397,48 @@ footer {
     font-family: "Roboto Condesed", sans-serif;
 } 
 
+.container-filmes {
+    display: flex;
+    flex-direction: column;
+    padding-block: 30px;
+}
+
+.genero-filmes {
+    color: var(--font-color);
+    font-family: var(--roboto-font);
+    padding-left: 30px;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.page-filme {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+    width: 100%;
+}
+
+.page-filme .imagem {
+    margin-block: 10px;
+}
+
 @media (min-width: 1024px) {
+
+    .img-filme-slideshow {
+        width: 11%;
+    }
+
+    .sinopse-filme-slideshow {
+        font-size: 16px;
+    }
+
+    .classificacao-filme-slideshow {
+        font-size: 16px;
+    }
+
+    .classificacao-filme-slideshow img {
+        width: 24px;
+    }
 
     .container-card-filmes .imagem:nth-child(6),
     .container-card-filmes .imagem:nth-child(5),
@@ -448,5 +493,7 @@ footer {
     .container-card-filmes {
         height: auto;
     }
+
+
 
 }

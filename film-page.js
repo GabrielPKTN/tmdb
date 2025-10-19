@@ -8,8 +8,6 @@ const URL = new URLSearchParams(window.location.search)
 // Pega o parâmetro id na URL
 const idFilme = URL.get('id')
 
-console.log(idFilme)
-
 async function jsonFilme(){
     const url = `https://api.themoviedb.org/3/movie/${idFilme}?api_key=${apiKey}`
     const response = await fetch(url)
@@ -120,9 +118,14 @@ function addClickFilmes() {
 }
 
 
-const homePage = document.getElementById('logo')
-homePage.addEventListener('click', () => {
-    window.location.href = "index.html"
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const homePage = document.getElementById('logo')
+    
+    homePage.addEventListener('click', () => {
+        window.location.href = "index.html"
+    })
+
 })
 
 

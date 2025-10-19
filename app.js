@@ -262,7 +262,6 @@ function manipulaDadosFilmeLancamentos(json) {
 
     }
 
-    containerCardFilmes.appendChild(buttonVerMais)
 
 }
 
