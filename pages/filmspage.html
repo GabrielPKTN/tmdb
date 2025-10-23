@@ -8,9 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Monoton&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
-    <script src="./functions/menu-mobile.js" defer></script>
-    <script src="./films-page.js"></script>
+    <link rel="stylesheet" href="../styles/style.css">
+    <script src="../js/menu-mobile.js" defer></script>
+    <script src="../js/films-page.js"></script>
     <title>TMDB</title>
 </head>
 <body>
@@ -18,7 +18,7 @@
         
         <nav id="menu-lateral">
             <div class="header-menu-lateral">
-                <i class="fa-solid fa-x" id="mobile-close-menu"></i>
+                <i class="fa-solid fa-x" id="mobile-close-menu-icon"></i>
                 <div class="logo-menu-mobile">
                     <h1>TMDB</h1>
                 </div>
@@ -53,7 +53,7 @@
             </ul>
         </nav>
 
-        <i class="fa-sharp fa-solid fa-bars" id="mobile-menu"></i>   
+        <i class="fa-sharp fa-solid fa-bars" id="mobile-menu-icon"></i>   
         <div class="logo" id="logo">
             <h1>TMDB</h1>
             <span>O lugar do seu entretenimento!</span>
@@ -61,11 +61,20 @@
 
     </header>
     <main>
-        <div class="container-filmes" id="container-filmes">
-            <div class="page-filme" id="page-filme">
 
-            </div>
+        <div class="container-filmes-film-page" id="container-filmes-film-page"></div>
+
+        
+        <div class="buttons-pages">
+            <i class="fa-solid fa-arrow-left"></i>
+            <div class="button-page">1</div>
+            <div class="button-page">2</div>
+            <div class="button-page">3</div>
+            <div class="button-page">4</div>
+            <div class="button-page">5</div>
+            <i class="fa-solid fa-arrow-right"></i>
         </div>
+
     </main>
     <footer>
 

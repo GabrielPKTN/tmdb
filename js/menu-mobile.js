@@ -1,7 +1,7 @@
 "use strict"
 
-const menuBurguer = document.getElementById('mobile-menu')
-const closeMenuBurguer = document.getElementById('mobile-close-menu')
+const menuBurguer = document.getElementById('mobile-menu-icon')
+const closeMenuBurguer = document.getElementById('mobile-close-menu-icon')
 
 function toggleMenu() {
     const nav = document.getElementById('menu-lateral')

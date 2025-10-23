@@ -8,40 +8,46 @@ const URL = new URLSearchParams(window.location.search)
 // Pega o parâmetro id na URL
 const idFilme = URL.get('id')
 
-async function jsonFilme(){
+async function filme(){
     const url = `https://api.themoviedb.org/3/movie/${idFilme}?api_key=${apiKey}`
     const response = await fetch(url)
     const data = await response.json()
 
-    console.log(url)
-
     return data
 }
 
-async function retornaDadosJsonFilme() {
+async function retornaDadosFilme() {
     
-    const object = await jsonFilme()
+    const object = await filme()
 
-    const containerFilme = document.getElementById('container-filme')
+    const containerFilme = document.getElementById('container-filmpage-filme')
 
     const tituloFilme = document.createElement('span')
-    const containerTrailer = document.createElement('div')
-    const imgBackgroundTrailer = document.createElement('img')
-    const sinopseFilme = document.createElement('p')
-
     tituloFilme.classList.add('titulo-filme')
+
+    const containerTrailer = document.createElement('div')
     containerTrailer.classList.add('container-trailer')
-    sinopseFilme.classList.add('filme-sinopse')
-    
+
+    const imgBackgroundTrailer = document.createElement('img')
     imgBackgroundTrailer.src = `https://image.tmdb.org/t/p/w500/${object.backdrop_path}`
 
+    const sinopseFilme = document.createElement('p')
+    sinopseFilme.classList.add('filme-sinopse')
+    
     tituloFilme.textContent = object.title
     sinopseFilme.textContent = object.overview
 
-    containerFilme.appendChild(tituloFilme)
-    containerFilme.appendChild(containerTrailer)
-    containerTrailer.appendChild(imgBackgroundTrailer)
-    containerFilme.appendChild(sinopseFilme)
+    containerFilme
+    .appendChild(tituloFilme)
+
+    containerFilme
+    .appendChild(containerTrailer)
+
+    containerTrailer
+    .appendChild(imgBackgroundTrailer)
+
+    containerFilme
+    .appendChild(sinopseFilme)
 
 }
 
@@ -68,39 +74,39 @@ function manipulaDadosFilmeRecomendados(json) {
         listaFilmes.push(json[i])
     }
 
-    const divFilmes = document.getElementById('recomendacoes')
+    const containerFilmes = document.getElementById('recomendacoes')
 
-    const spanLancamentos = document.createElement('span')
-    spanLancamentos.textContent = "RECOMENDADO"
+    const spanRecomendados = document.createElement('span')
+    spanRecomendados.textContent = "RECOMENDADO"
 
     const containerCardFilmes = document.createElement('div')
     containerCardFilmes.classList.add('container-card-filmes')
 
     const urlImages = "https://image.tmdb.org/t/p/w200"
 
-    divFilmes.appendChild(spanLancamentos)
-    divFilmes.appendChild(containerCardFilmes)
+    containerFilmes.appendChild(spanRecomendados)
+    containerFilmes.appendChild(containerCardFilmes)
 
     for (let filme of listaFilmes) {
 
-        const divFilme = document.createElement('div')
-        divFilme.classList.add('imagem')
-        divFilme.id = filme.id
+        const containerFilme = document.createElement('div')
+        containerFilme.classList.add('filme')
+        containerFilme.id = filme.id
 
-        containerCardFilmes.appendChild(divFilme)
+        containerCardFilmes.appendChild(containerFilme)
 
-        const divClickFilme = document.createElement('div')
-        divClickFilme.classList.add('filmeClick')
-        divClickFilme.id = filme.id
+        const clickFilme = document.createElement('div')
+        clickFilme.classList.add('filmeClick')
+        clickFilme.id = filme.id
 
-        divFilme.appendChild(divClickFilme)
+        containerFilme.appendChild(clickFilme)
 
         const posterFilm = document.createElement('img')
 
         const imagemPoster = filme.poster_path
         posterFilm.src = urlImages + imagemPoster
 
-        divFilme.appendChild(posterFilm)
+        containerFilme.appendChild(posterFilm)
 
     }
 
@@ -123,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const homePage = document.getElementById('logo')
     
     homePage.addEventListener('click', () => {
-        window.location.href = "index.html"
+        window.location.href = "./index.html"
     })
 
 })
@@ -131,5 +137,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-retornaDadosJsonFilme()
+retornaDadosFilme()
 retornaDadosFilmesRecomendados()

@@ -3,6 +3,7 @@
     --primary-color: #38364E;
     --monoton-font: 'Monoton', sans-serif;
     --roboto-font: 'Roboto Condesed', sans-serif;
+    --tertiary-color: #070045;
 }
 
 *{
@@ -12,7 +13,7 @@
 }
 
 body{
-    background: linear-gradient(30deg, #070045, #38364E 100%);
+    background: linear-gradient(30deg, #070045 5%, #38364E 80%);
     width: 100%;
     height: auto;
 }
@@ -42,7 +43,7 @@ header nav ul li a {
     display: flex;
     color: var(--font-color);
     text-decoration: none;
-    font-family: 'Roboto Condesed', sans-serif;
+    font-family: var(--roboto-font);
     padding: 20px;
     font-size: 24px;
     transition: ease-in-out 0.3s;
@@ -104,7 +105,7 @@ header nav ul li a:hover {
 
 .logo-menu-mobile {
     width: auto;
-    font-family: 'Monoton', sans-serif;
+    font-family: var(--monoton-font);
     font-size: 12px;
 }
 
@@ -123,12 +124,12 @@ header nav ul li a:hover {
     padding-left: 5px;
 }
 
-#mobile-menu {
+#mobile-menu-icon {
     cursor: pointer;
     font-size: 20px;
 }
 
-#mobile-close-menu {
+#mobile-close-menu-icon {
     cursor: pointer;
     font-size: 20px;
 }
@@ -144,14 +145,14 @@ header nav ul li a:hover {
 .logo h1 {
     height: 50px;
     font-size: 40px;
-    font-family: 'Monoton', sans-serif;
+    font-family: var(--monoton-font);
     font-weight: 100;
     cursor: pointer;
 }
 
 .logo span {
     font-size: 16px;
-    font-family: 'Roboto Condesed', sans-serif;
+    font-family: var(--roboto-font);
     cursor: default;
 }
 
@@ -166,18 +167,18 @@ main {
 
 .container-slider {
     padding-top: 10px;
+    overflow: hidden;
 }
 
-.container-slideshow {
+.container-filmes-slider {
     display: flex;
     position: relative;
     height: auto;
     width: 100%;
-    justify-content: center;
     height: 100%;
 }
 
-.container-slide-info-filme {
+.container-label-filme-slider {
     background: linear-gradient(60deg, #000000, #0000002b 50%, #6666662b 70%);
     position: absolute;
     width: 100%;
@@ -186,33 +187,24 @@ main {
     align-items: end;
 }
 
-.info-filme {
+.container-informacoes-filme-slider {
     height: 50%;
     width: 100%;
 }
 
-.container-items {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    overflow: hidden;
-}
-
-.img-filme-slideshow {
+.poster-filme-informacoes-slider {
     margin-left: 10px;
-    height: 100%;
     margin-bottom: 5px;
     width: 8%;
     background-color: #000000;
 }
 
-.img-filme-slideshow img {
+.poster-filme-informacoes-slider img {
     width: 100%;
     height: 100%;
 }
 
-.classificacao-filme-slideshow {
+.classificacao-filme-slider {
     width: 40%;
     display: flex;
     font-size: 5px;
@@ -221,9 +213,9 @@ main {
     justify-content: space-between;
 }
 
-.classificacao-filme-slideshow span {
+.classificacao-filme-slider span {
     color: #FFF;
-    font-family: "Roboto Condesed", sans-serif;
+    font-family: var(--roboto-font);
     margin-left: 5px;
 }
 
@@ -235,15 +227,15 @@ main {
     color: #474747;
 }
 
-.classificacao-indicativa-slideshow {
+.classificacao-indicativa-slider {
     width: 10px;
 }
 
-.classificacao-indicativa-slideshow img{
+.classificacao-indicativa-slider img{
     width: 100%;
 }
 
-.sinopse-filme-slideshow {
+.sinopse-filme-slider {
     width: 40%;
     height: 8ch;
     overflow: hidden;
@@ -251,17 +243,17 @@ main {
     margin-left: 10px;
     font-size: 8px;
     color: white;
-    font-family: "Roboto Condesed", sans-serif;
+    font-family: var(--roboto-font);
 }
 
 
-.item {
+.container-filme-slider {
     min-width: 100%;
     height: 100%;
     transition: ease-in-out 0.3s;
 }
 
-.item img {
+.container-filme-slider img {
     width: 100%;
     height: max-content;
     object-fit: cover;
@@ -274,9 +266,9 @@ main {
     padding-top: 20px;
 }
 
-.filme {
+.container-filmes {
     color: var(--font-color);
-    font-family: "Roboto Condesed", sans-serif;
+    font-family: var(--roboto-font);
     height: 14rem;
     display: flex;
     flex-direction: column;
@@ -285,9 +277,10 @@ main {
     overflow: hidden;
 }
 
-.filme span {
+.container-filmes span {
     padding-left: 30px;
-    padding-block: 20px; 
+    padding-block: 20px;
+    font-weight: 600;
 }
 
 .container-card-filmes {
@@ -309,13 +302,17 @@ main {
     cursor: pointer;
 }
 
-.container-card-filmes .imagem:nth-child(9),
-.container-card-filmes .imagem:nth-child(8),
-.container-card-filmes .imagem:nth-child(7),
-.container-card-filmes .imagem:nth-child(6),
-.container-card-filmes .imagem:nth-child(5),
-.container-card-filmes .imagem:nth-child(4) {
+.container-card-filmes .filme:nth-child(9),
+.container-card-filmes .filme:nth-child(8),
+.container-card-filmes .filme:nth-child(7),
+.container-card-filmes .filme:nth-child(6),
+.container-card-filmes .filme:nth-child(5),
+.container-card-filmes .filme:nth-child(4) {
     display: none;
+}
+
+#lancamento .container-card-filmes .filme:nth-child(4) {
+    display: block;
 }
 
 .filmeClick {
@@ -325,14 +322,14 @@ main {
     width: 100%;
 }
 
-.imagem {
+.filme {
     position: relative;
     background-color: black;
     width: 90px;
     height: 130px;
 }
 
-.imagem img {
+.filme img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -368,7 +365,7 @@ footer {
 }
 
 .container-icon-link a {
-    font-family: "Roboto Condesed", sans-serif;
+    font-family: var(--roboto-font);
     color: var(--font-color);
     text-align: center;
 }
@@ -394,32 +391,108 @@ footer {
 
 .links li a {
     color: var(--font-color);
-    font-family: "Roboto Condesed", sans-serif;
+    font-family: var(--roboto-font);
 } 
 
-.container-filmes {
-    display: flex;
-    flex-direction: column;
-    padding-block: 30px;
-}
+#container-filmpage-filme {
+    padding-block: 50px;
+    height: 100%;
 
-.genero-filmes {
+    .titulo-filme {
     color: var(--font-color);
     font-family: var(--roboto-font);
-    padding-left: 30px;
+    padding-left: 10px;
     font-weight: 600;
-    font-size: 1.5rem;
+    }
+
+    .container-trailer {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        background-color: black;
+    }
+
+    .container-trailer img {
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .filme-sinopse {
+        color: var(--font-color);
+        font-family: var(--roboto-font);
+        padding-top: 10px;
+        padding-inline: 10px;
+        width: 100%;
+    }
+
 }
 
-.page-filme {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-items: center;
+#recomendacoes .container-card-filmes .filme:nth-child(4) {
+    display: block;
+}
+
+.container-filmes-film-page {
+    margin-top: 50px;
+
+     .genero-filmes {
+        color: var(--font-color);
+        font-family: var(--roboto-font);
+        padding-left: 30px;
+        font-weight: 600;
+        font-size: 1.5rem;
+    }
+
+    .page-filme {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        width: 100%;
+
+    }
+
+    .page-filme .filme {
+            margin-block: 10px;
+    }
+
+}
+
+.buttons-pages {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
     width: 100%;
+    gap: 5px;
+    align-items: center;
 }
 
-.page-filme .imagem {
-    margin-block: 10px;
+.buttons-pages i {
+   font-size: 1.5rem;
+   cursor: pointer;
+   color: black;
+}
+
+.buttons-pages .fa-arrow-right {
+   margin-left: 10px;
+}
+
+.buttons-pages .fa-arrow-left {
+   margin-right: 10px;
+}
+
+.button-page {
+    border-radius: 5px;
+    background-color: #FF4D00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    height: 2.5rem;
+    color: var(--tertiary-color);
+    cursor: pointer;
+    font-family: var(--roboto-font);
+    font-weight: 600;
 }
 
 @media (min-width: 1024px) {
@@ -428,25 +501,29 @@ footer {
         width: 11%;
     }
 
-    .sinopse-filme-slideshow {
+    .sinopse-filme-slider {
         font-size: 16px;
     }
 
-    .classificacao-filme-slideshow {
+    .classificacao-filme-slider {
         font-size: 16px;
     }
 
-    .classificacao-filme-slideshow img {
+    .classificacao-filme-slider img {
         width: 24px;
     }
 
-    .container-card-filmes .imagem:nth-child(6),
-    .container-card-filmes .imagem:nth-child(5),
-    .container-card-filmes .imagem:nth-child(4) {
+    .container-card-filmes .filme:nth-child(6),
+    .container-card-filmes .filme:nth-child(5),
+    .container-card-filmes .filme:nth-child(4) {
         display: block;
     }
 
-    .imagem {
+    .lancamento .container-card-filmes .filme:nth-child(7) {
+        display: block;
+    }
+
+    .filme {
         background-color: black;
         width: 100px;
         height: 160px;
@@ -465,13 +542,13 @@ footer {
 
 @media (min-width: 1420px) {
 
-    .container-card-filmes .imagem:nth-child(9),
-    .container-card-filmes .imagem:nth-child(8),
-    .container-card-filmes .imagem:nth-child(7) {
+    .container-card-filmes .filme:nth-child(9),
+    .container-card-filmes .filme:nth-child(8),
+    .container-card-filmes .filme:nth-child(7) {
         display: block;
     }
 
-    .imagem {
+    .filme {
         background-color: black;
         width: 150px;
         height: 250px;

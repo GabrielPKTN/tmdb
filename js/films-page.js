@@ -32,7 +32,7 @@ async function manipulaDadosFilme(json) {
         listaFilmes.push(json[i])
     }
 
-    const containerFilmes = document.getElementById('container-filmes')
+    const containerFilmesFilmsPage = document.getElementById('container-filmes-film-page')
 
     const spanGeneroFilmes = document.createElement('span')
     const genero = await retornaGenreFilmes()
@@ -40,35 +40,35 @@ async function manipulaDadosFilme(json) {
 
     spanGeneroFilmes.classList.add('genero-filmes')
     
-    containerFilmes.appendChild(spanGeneroFilmes)
+    containerFilmesFilmsPage.appendChild(spanGeneroFilmes)
 
-    const divFilmes = document.createElement('div')
-    divFilmes.classList.add('page-filme')
+    const containerFilmes = document.createElement('div')
+    containerFilmes.classList.add('page-filme')
     
-    containerFilmes.appendChild(divFilmes)
+    containerFilmesFilmsPage.appendChild(containerFilmes)
 
     const urlImages = "https://image.tmdb.org/t/p/w200"
 
     for (let filme of listaFilmes) {
 
-        const divFilme = document.createElement('div')
-        divFilme.classList.add('imagem')
-        divFilme.id = filme.id
+        const containerFilme = document.createElement('div')
+        containerFilme.classList.add('filme')
+        containerFilme.id = filme.id
 
-        divFilmes.appendChild(divFilme)
+        containerFilmes.appendChild(containerFilme)
 
-        const divClickFilme = document.createElement('div')
-        divClickFilme.classList.add('filmeClick')
-        divClickFilme.id = filme.id
+        const filmeClick = document.createElement('div')
+        filmeClick.classList.add('filmeClick')
+        filmeClick.id = filme.id
 
-        divFilme.appendChild(divClickFilme)
+        containerFilme.appendChild(filmeClick)
 
         const posterFilm = document.createElement('img')
 
         const imagemPoster = filme.poster_path
         posterFilm.src = urlImages + imagemPoster
 
-        divFilme.appendChild(posterFilm)
+        containerFilme.appendChild(posterFilm)
 
     }
 
