@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const homePage = document.getElementById('logo')
     
     homePage.addEventListener('click', () => {
-        window.location.href = "./index.html"
+        window.location.href = "../index.html"
     })
 
 })

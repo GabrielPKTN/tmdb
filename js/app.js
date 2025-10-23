@@ -361,7 +361,7 @@ function manipulaDadosFilme(jsonFilmes, genero) {
     buttonVerMais.textContent = "VER MAIS..."
 
         buttonVerMais.addEventListener('click', () => {
-        window.location.href = `filmspage.html?genre-film=${genero}`
+        window.location.href = `./pages/filmspage.html?genre-film=${genero}&page=1`
 
     })
 
@@ -377,8 +377,7 @@ function addClickFilmes() {
     filmes.forEach((filme) => {
         filme.addEventListener('click', () => {
             //Redireciona o usuário para a página do filme que ele clicou
-            console.log(`./filmpage.html?id=${filme.id}`)
-            window.location.href = `./filmpage.html?id=${filme.id}`
+            window.location.href = `./pages/filmpage.html?id=${filme.id}`
         })
     })
 }

@@ -8,8 +8,11 @@ const URL = new URLSearchParams(window.location.search)
 // Pega o parâmetro id na URL
 const idGenero = URL.get('genre-film')
 
+// Pega a página de filmes na URL
+const paginaFilmes = URL.get('page')
+
 async function jsonFilmes() {
-    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${idGenero}&language=pt-BR`
+    const url = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&with_genres=${idGenero}&page=${paginaFilmes}`
     const response = await fetch(url)
     const data = await response.json()
 
@@ -123,7 +126,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const homePage = document.getElementById('logo')
     
     homePage.addEventListener('click', () => {
-        window.location.href = "index.html"
+        window.location.href = "../index.html"
     })
 
 })
