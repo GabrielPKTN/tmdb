@@ -206,10 +206,10 @@ const buttons = {
             buttonPage.classList.add('active')
         }
 
-        buttonPage.addEventListener('click', async (object) => {
+        buttonPage.addEventListener('click', (object) => {
             const page = object.target.innerText
 
-            await controls.goTo(page)
+            controls.goTo(page)
 
             buttons.update()
         })
@@ -217,13 +217,25 @@ const buttons = {
         containerButtons.appendChild(buttonPage)
     },
 
+    //Função para atualizar, e limitar o número de botões de paginação
+    //que aparecem na página.
     update() {
 
+        //Container onde ficam os botões
         const containerButtons = document.getElementById('buttons-pages')
+        
+        //Limpa o container toda vez que a função update roda
         containerButtons.innerHTML = ""
         
         const {maxLeft, maxRight} = buttons.calculateMaxVisible()
 
+        /*
+         * page = botão que representa a página 
+         * 
+         * Enquanto o intervalo de maxLeft até maxRight não for prenchido,
+         * ele cria os botões dentro da div buttons-pages
+         * 
+         */
         for(let page = maxLeft; page <= maxRight; page++) {
             buttons.create(page)
         }
@@ -236,15 +248,35 @@ const buttons = {
         // para utilizar no calculo de botões visíveis
         const { maxVisibleButtons } = state
 
+        /*
+         *
+         * maxLeft/maxRight   ->   Quantidade de botões que terei para a esquerda/direita
+         *                         nesse caso como foi definido que o número total
+         *                         de botões seria 5, dividimos por 2, 2.5
+         * 
+         * Math.floor       ->     Retorna o menor inteiro que é maior ou igual a 5/2
+         *                         nesse caso, 2
+         * 
+         */
+
         let maxLeft = (state.page - Math.floor(maxVisibleButtons / 2))
         let maxRight = (state.page + Math.floor(maxVisibleButtons / 2))
         
-
+        /*
+         * Se o valor do primeiro botão que aparecer na esquerda for menor do que 1
+         * então o primeiro botão da esquerda recebe 1 e o último 5, respeitando o
+         * intervalo de botões que podem aparecer.
+         */ 
         if(maxLeft < 1) {
             maxLeft = 1
             maxRight = 5
         }
 
+        /*
+         * Se o último botão que representa a página atual for maior que a quantidade
+         * de páginas máximas definidas, então o primeiro botão da esquerda vai receber
+         * o valor de 500 - (5 - 1), que é 496, e o último botão da direita recebe 500.
+         */ 
         if (maxRight > state.total_pages) {
             maxLeft = state.total_pages - ( maxVisibleButtons - 1 )
             maxRight = state.total_pages
