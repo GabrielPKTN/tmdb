@@ -1,61 +1,133 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link rel="stylesheet" href="path/to/fontawesome/css/all.min.css">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="path/to/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="path/to/fontawesome/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Monoton&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Monoton&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
     <script src="./js/menu-mobile.js" defer></script>
     <script src="./js/app.js"></script>
     <title>TMDB</title>
 </head>
+
 <body>
+    <div class="background" id="background"></div>
     <header>
-        
-        <nav id="menu-lateral">
-            <div class="header-menu-lateral">
-                <i class="fa-solid fa-x" id="mobile-close-menu-icon"></i>
-                <div class="logo-menu-mobile">
-                    <h1>TMDB</h1>
-                </div>
-                <input type="text" name="" id="input" placeholder="Pesquise seu filme aqui...">
-            </div>
-            <ul>
-                <li><a href="#">LOGIN</a></li>
-                <li><a href="#">CADASTRE-SE</a></li>
-                <li class="drop-hover"><a href="#">CATEGORIAS <i class="fa-solid fa-chevron-down"></i></a>
-                    <div class="drop">
-                        <a href="" id="28">AÇÃO</a>
-                        <a href=""id="12">AVENTURA</a>
-                        <a href="" id="16">ANIMAÇÃO</a>
-                        <a href="" id="35">COMÉDIA</a>
-                        <a href="" id="80">CRIME</a>
-                        <a href="" id="99">DOCUMENTÁRIO</a>
-                        <a href="" id="18">DRAMA</a>
-                        <a href="" id="10751">FAMÍLIA</a>
-                        <a href="" id="14">FANTASIA</a>
-                        <a href="" id="36">HISTÓRIA</a>
-                        <a href="" id="27">TERROR</a>
-                        <a href="" id="10402">MÚSICA</a>
-                        <a href="" id="9648">MISTÉRIO</a>
-                        <a href="" id="10749">ROMANCE</a>
-                        <a href="" id="878">FICÇÃO CIENTÍFICA</a>
-                        <a href="" id="10770">CINEMA TV</a>
-                        <a href="" id="53">THRILLER</a>
-                        <a href="" id="10752">GUERRA</a>
-                        <a href="" id="37">FAROESTE</a>
+        <nav>
+            <div class="container-side-bar">
+
+                <div class="menu-side-bar">
+                    <div class="header-menu-side-bar">
+                        <h1>TMDB</h1>
+                        <i class="fa-solid fa-x" id="mobile-close-menu-icon"></i>
                     </div>
-                </li>
-            </ul>
+                    <input type="text" name="" id="input" placeholder="Tente 'Nós'">
+                </div>
+
+
+                <div class="container-menu">
+                    <div class="container-item">
+
+                        <div class="container-style-item" id="categorias">
+                            <div class="container-name-item">
+                                <i class="fa-solid fa-folder"></i>
+                                <span>CATEGORIAS</span>
+                            </div>
+                            <div class="container-icon-arrow-down">
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                        </div>
+                        <div class="drop-hover" id="drop-hover">
+                            <div class="link">
+                                <a href="" id="28">AÇÃO</a>
+                            </div>
+                            <div class="link">
+                                <a href=" " id="12">AVENTURA</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="16">ANIMAÇÃO</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="35">COMÉDIA</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="80">CRIME</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="99">DOCUMENTÁRIO</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="18">DRAMA</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="10751">FAMÍLIA</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="14">FANTASIA</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="36">HISTÓRIA</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="27">TERROR</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="10402">MÚSICAL</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="9648">MISTÉRIO</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="10749">ROMANCE</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="14">FANTASIA</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="878">FICÇÃO CIENTÍFICA</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="10770">CINEMA TV</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="53">THRILLER</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="10752">GUERRA</a>
+                            </div>
+                            <div class="link">
+                                <a href="" id="37">FAROESTE</a>
+                            </div>
+                        </div>
+                        <div class="container-style-item">
+                            <div class="container-name-item normal">
+                                <span>CADASTRE-SE</span>
+                            </div>
+                        </div>
+                        <div class="container-style-item">
+                            <div class="container-name-item normal">
+                                <span>LOGIN</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         </nav>
 
-        <i class="fa-sharp fa-solid fa-bars" id="mobile-menu-icon"></i>   
+        <i class="fa-sharp fa-solid fa-bars" id="mobile-menu-icon"></i>
         <div class="logo">
-            <h1>TMDB</h1>
+            <h1 id="logo">TMDB</h1>
             <span>O lugar do seu entretenimento!</span>
         </div>
 
@@ -84,9 +156,9 @@
             <div class="container-filmes" id="terror">
                 <span>TERROR</span>
             </div>
-            
+
         </section>
-               
+
     </main>
     <footer>
 
@@ -98,7 +170,7 @@
             </div>
 
             <div class="container-redes-sociais">
-               
+
                 <div class="container-icon-link">
                     <i class="fa-brands fa-instagram"></i>
                     <a href="">www.instagram.com/tmdb</a>
@@ -115,9 +187,9 @@
                     <i class="fa-brands fa-youtube"></i>
                     <a href="">www.youtube.com/tmdb</a>
                 </div>
-                    
+
             </div>
-            
+
 
         </div>
         <div class="links-importantes">
@@ -146,4 +218,5 @@
 
     </footer>
 </body>
+
 </html>
