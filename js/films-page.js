@@ -76,7 +76,6 @@ async function manipulaDadosFilme(json) {
     }
 
     addClickFilmes()
-
 }
 
 async function jsonGenre() {
@@ -121,6 +120,153 @@ function addClickFilmes() {
     })
 }
 
+const state = {
+    page: Number(paginaFilmes),
+    total_pages: 500,
+    maxVisibleButtons: 5
+    
+}
+
+const controls = {
+
+    next() {
+        state.page++
+
+
+        const ultimaPagina = state.page > state.total_pages
+
+        //Se eu passar da última página
+        if(ultimaPagina) {
+            state.page--
+        }
+
+    },
+
+    prev() {
+        state.page--
+
+        if (state.page < 0) {
+            state.page++
+        }
+
+    },
+
+    goTo(pageNumber) {
+        if (pageNumber < 1) {
+            pageNumber = 1
+        }
+
+        if (pageNumber > state.total_pages) {
+            pageNumber = state.total_pages
+        }
+
+        window.location.href = `filmspage.html?genre-film=${idGenero}&page=${pageNumber}`
+    },
+
+    createListeners() {
+
+        const iconFirstPage = document.getElementById('first')
+        iconFirstPage.addEventListener('click', () => {
+            controls.goTo(1)
+        })
+
+        const iconNextPage = document.getElementById('next')
+        iconNextPage.addEventListener('click', () => {
+            controls.next()
+            controls.goTo(state.page)
+        })
+
+        const iconPreviousPage = document.getElementById('previous')
+        iconPreviousPage.addEventListener('click', () => {
+            controls.prev()
+            controls.goTo(state.page)
+        })
+
+        const iconLastPage = document.getElementById('last')
+        iconLastPage.addEventListener('click', () => {
+            const lastPage = state.total_pages
+            controls.goTo(lastPage)
+        })
+
+
+    }
+
+}
+
+const buttons = {
+
+    create(number) {
+        const containerButtons = document.getElementById('buttons-pages')
+
+        const buttonPage = document.createElement('div')
+        buttonPage.classList.add('button-page')
+        buttonPage.textContent = number
+
+        if(state.page == number) {
+            buttonPage.classList.add('active')
+        }
+
+        buttonPage.addEventListener('click', async (object) => {
+            const page = object.target.innerText
+
+            await controls.goTo(page)
+
+            buttons.update()
+        })
+
+        containerButtons.appendChild(buttonPage)
+    },
+
+    update() {
+
+        const containerButtons = document.getElementById('buttons-pages')
+        containerButtons.innerHTML = ""
+        
+        const {maxLeft, maxRight} = buttons.calculateMaxVisible()
+
+        for(let page = maxLeft; page <= maxRight; page++) {
+            buttons.create(page)
+        }
+
+    },
+
+    calculateMaxVisible() {
+
+        // Desestruturando o objeto state, e tirando o atributo maxVisibleButtons
+        // para utilizar no calculo de botões visíveis
+        const { maxVisibleButtons } = state
+
+        let maxLeft = (state.page - Math.floor(maxVisibleButtons / 2))
+        let maxRight = (state.page + Math.floor(maxVisibleButtons / 2))
+        
+
+        if(maxLeft < 1) {
+            maxLeft = 1
+            maxRight = 5
+        }
+
+        if (maxRight > state.total_pages) {
+            maxLeft = state.total_pages - ( maxVisibleButtons - 1 )
+            maxRight = state.total_pages
+
+            if(maxRight < 1) {
+                maxLeft = 1
+            }
+
+        }
+
+        return {maxLeft, maxRight}
+
+    }
+}
+
+function init() {
+
+    buttons.update()
+    controls.createListeners()
+
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     
     const homePage = document.getElementById('logo')
@@ -128,6 +274,8 @@ document.addEventListener('DOMContentLoaded', () => {
     homePage.addEventListener('click', () => {
         window.location.href = "../index.html"
     })
+
+    init()
 
 })
 
