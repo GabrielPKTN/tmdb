@@ -82,7 +82,7 @@ async function jsonGenre() {
     const url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${apiKey}&language=pt-BR`
     const response = await fetch(url)
     const data = await response.json()
-    
+
     return data.genres
 }
 
@@ -296,6 +296,7 @@ function init() {
 
     buttons.update()
     controls.createListeners()
+    retornaDadosFilmes()
 
 }
 
@@ -310,6 +311,3 @@ document.addEventListener('DOMContentLoaded', () => {
     init()
 
 })
-
-
-retornaDadosFilmes()

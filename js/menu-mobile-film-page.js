@@ -14,7 +14,7 @@ function genreFilmsPages() {
     const linksDropMenu = dropMenu.children
     for (let tag of linksDropMenu) {
         
-        tag.href = `./pages/filmspage.html?genre-film=${tag.id}&page=1`
+        tag.href = `./filmspage.html?genre-film=${tag.id}&page=1`
         
     }
 }
