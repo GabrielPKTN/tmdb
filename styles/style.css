@@ -220,7 +220,7 @@ header {
         }
 
     }
-    
+
     .drop-hover.active {
         height: 300px;
     }
@@ -251,22 +251,22 @@ body::-webkit-scrollbar {
     border-radius: 5px;
 }
 
-
 #mobile-menu-icon {
     cursor: pointer;
     font-size: 20px;
+    margin-left: 50px;
+
 }
 
 .logo {
-    text-align: center;
-    width: 90%;
     display: flex;
+    align-items: center;
     flex-direction: column;
-    color: var(--font-color);
+    width: auto;
+    width: 100%;
 }
 
 .logo h1 {
-    width: auto;
     height: 50px;
     font-size: 40px;
     font-family: var(--monoton-font);
@@ -281,8 +281,11 @@ body::-webkit-scrollbar {
     cursor: default;
 }
 
-header i {
-    height: auto;
+.container-header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
 }
 
 main {
