@@ -4,7 +4,7 @@ const menuBurguer = document.getElementById('mobile-menu-icon')
 const closeMenuBurguer = document.getElementById('mobile-close-menu-icon')
 const dropMenu = document.getElementById('categorias')
 const nav = document.querySelector('.container-side-bar')
-
+const logoMenuSideBar = document.getElementById('logo-side-bar')
 const inputIcon = document.getElementById('button-pesquisa')
 
 function toggleMenu() {
@@ -99,6 +99,24 @@ function toggleInput() {
     })
 
 }
+
+function homeMenuSideBar() {
+
+    const URL = window.location.pathname
+
+    if (URL.includes('pages')) {
+        
+        window.location.href = `../index.html`
+
+    } else {
+
+        window.location.href = `./index.html`
+
+    }
+
+}
+
+logoMenuSideBar.addEventListener('click', homeMenuSideBar)
 
 inputIcon.addEventListener('click', toggleInput)
 

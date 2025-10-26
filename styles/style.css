@@ -83,6 +83,7 @@ body{
         color: white;
 
         background-color: transparent;
+
     }
 
     input::-webkit-input-placeholder {
@@ -142,6 +143,7 @@ header {
             margin-top: 20px;
 
             h1 {
+                cursor: pointer;
                 font-family: var(--monoton-font);
                 font-weight: 400;
                 width: auto;
@@ -321,6 +323,7 @@ body::-webkit-scrollbar {
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     width: auto;
     width: 100%;
 }
@@ -334,7 +337,7 @@ body::-webkit-scrollbar {
 }
 
 .logo span {
-    font-size: 16px;
+    font-size: 0.8rem;
     font-family: var(--roboto-font);
     font-weight: 600;
     cursor: default;
@@ -777,6 +780,7 @@ footer {
     .container-card-filmes {
         height: auto;
     }
+
 
 
 
