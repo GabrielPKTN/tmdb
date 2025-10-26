@@ -15,12 +15,19 @@
         href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Monoton&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../styles/style.css">
-    <script src="../js/menu-mobile.js" defer></script>
+    <script src="../js/header.js" defer></script>
     <script src="../js/films-page.js"></script>
     <title>TMDB</title>
 </head>
 
-<div class="background" id="background"></div>
+<body>
+    <div class="background" id="background"></div>
+    <div class="container-input" id="container-input">
+        <div class="container-input-relative">
+            <input type="text" name="" id="input" placeholder="Tente 'Nós'">
+            <i class="fa-solid fa-magnifying-glass"></i>    
+        </div>
+    </div>
     <header>
         <nav>
             <div class="container-side-bar">
@@ -30,7 +37,6 @@
                         <h1>TMDB</h1>
                         <i class="fa-solid fa-x" id="mobile-close-menu-icon"></i>
                     </div>
-                    <input type="text" name="" id="input" placeholder="Tente 'Nós'">
                 </div>
 
 
@@ -123,12 +129,16 @@
                 </div>
             </div>
         </nav>
-
-        <i class="fa-sharp fa-solid fa-bars" id="mobile-menu-icon"></i>
-        <div class="logo" id="logo">
-            <h1>TMDB</h1>
-            <span>O lugar do seu entretenimento!</span>
+        <div class="container-header">
+            <i class="fa-sharp fa-solid fa-bars" id="mobile-menu-icon"></i>
+            <div class="logo">
+                <h1 id="logo">TMDB</h1>
+                <span>O lugar do seu entretenimento!</span>
+            </div>
+            <i class="fa-solid fa-magnifying-glass button-pesquisa" id="button-pesquisa"></i>
         </div>
+        
+        
 
     </header>
     <main>

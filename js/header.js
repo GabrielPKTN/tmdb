@@ -5,6 +5,8 @@ const closeMenuBurguer = document.getElementById('mobile-close-menu-icon')
 const dropMenu = document.getElementById('categorias')
 const nav = document.querySelector('.container-side-bar')
 
+const inputIcon = document.getElementById('button-pesquisa')
+
 function toggleMenu() {
 
     const backgroundDesfocado = document.getElementById('background')
@@ -77,9 +79,32 @@ function toggleCategorias() {
 }
 
 
+function toggleInput() {
+
+    const backgroundDesfocado = document.getElementById('background')
+    const body = document.querySelector('body')
+    
+    const containerInput = document.getElementById('container-input')
+    
+    containerInput.classList.add('active')
+    backgroundDesfocado.classList.add('active')
+    body.classList.add('scroll-desativado')
+
+    backgroundDesfocado.addEventListener('click', () => {
+
+        containerInput.classList.remove('active')
+        backgroundDesfocado.classList.remove('active')
+        body.classList.remove('scroll-desativado')
+
+    })
+
+}
+
+inputIcon.addEventListener('click', toggleInput)
+
 menuBurguer.addEventListener('click', toggleMenu)
 closeMenuBurguer.addEventListener('click', toggleMenu)
-dropMenu.addEventListener('click',toggleCategorias )
+dropMenu.addEventListener('click', toggleCategorias )
 
 
 genreFilmsPages()
