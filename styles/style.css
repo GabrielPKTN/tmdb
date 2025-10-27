@@ -746,11 +746,178 @@ footer {
 
     .filmes {
         gap: 100px;
+        span {
+            font-size: 1.5rem;
+        }
+    }
+
+    .container-filmes-film-page {
+        margin-top: 50px;
+
+        .genero-filmes {
+            color: var(--font-color);
+            font-family: var(--roboto-font);
+            padding-left: 30px;
+            font-weight: 600;
+            font-size: 2rem;
+        }
+
+        .page-filme {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            justify-items: center;
+            width: 100%;
+
+            .filme {
+                height: auto;
+                width: auto;
+                margin-block: 10px;
+
+                img {
+                    object-fit: contain;
+                }
+
+            }
+
+        }
+
+    }
+
+    .pagination {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        margin-top: 100px;
+    
+    }
+
+    .titulo-filme {
+        font-size: 2rem;
+    }
+
+    .filme-sinopse {
+        font-size: 1.5rem;
+    }
+
+    #recomendacoes {
+        span {
+            font-size: 1.5rem;
+        }
     }
 
 }
 
 @media (min-width: 1420px) {
+
+    .container-input {
+
+        z-index: 1001;
+        transition: ease-in-out 0.3s;
+        transform: translateY(-100%);
+        border: #38364E;
+        position: absolute;
+        top: 0;
+        background-color: #252433;
+        height: 4rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .container-input-relative {
+            
+            display: flex;
+            align-items: center;
+            width: 90%;
+            height: 80%;
+            position: relative;
+        }
+
+        input {
+
+            font-size: 1.5rem;
+
+            width: 100%;
+            height: 1.5rem;
+            position: absolute;
+            
+            padding-left: 5px;
+            
+            border: none;
+            border-bottom: solid var(--font-color) 2px;
+            outline: none;
+
+            color: white;
+
+            background-color: transparent;
+
+        }
+
+        input::-webkit-input-placeholder {
+            color: var(--font-color);
+            font-family: var(--font-color);
+        }
+
+        i {
+            width: 10px;
+            height: 10px;
+            color: var(--font-color);
+            position: absolute;
+            margin-left: 98%;
+            padding-bottom: 20px;
+            cursor: pointer;
+        }
+
+    }
+
+    #mobile-menu-icon {
+        cursor: pointer;
+        font-size: 2rem;
+        margin-left: 15px;
+    }
+
+    .button-pesquisa {
+        font-size: 2rem;
+        margin-right: 15px;
+        cursor: pointer;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .logo h1 {
+        height: 70px;
+        font-size: 60px;
+        font-family: var(--monoton-font);
+        font-weight: 100;
+        cursor: pointer;
+    }
+
+    .logo span {
+        font-size: 1rem;
+        font-family: var(--roboto-font);
+        font-weight: 600;
+        cursor: default;
+    }
+
+    .sinopse-filme-slider {
+        font-size: 1.5rem;
+    }
+
+    .classificacao-filme-slider {
+        font-size: 1.5rem;
+
+        img {
+            width: 2rem;
+        }
+    }
 
     .container-card-filmes .filme:nth-child(9),
     .container-card-filmes .filme:nth-child(8),
@@ -759,29 +926,116 @@ footer {
     }
 
     .filme {
-        background-color: black;
-        width: 150px;
-        height: 250px;
+        background-color: transparent;
+        width: auto;
+        height: auto;
     }
 
-    .filme {
+    .filmes {
         height: 100%;
+        width: auto;
+
+        .filmes {
+            gap: 100px;
+            span {
+                font-size: 2rem;
+            }
+        }
     }
 
     .filme span {
         padding-left: 30px;
-        font-size: 20px;   
+        font-size: 20px;  
     }
 
-    .filmes {
-        gap: 100px;
+    .container-filmes {
+        height: auto;
     }
 
     .container-card-filmes {
         height: auto;
     }
 
+    .container-filmes-film-page {
+        margin-top: 50px;
 
+        .genero-filmes {
+            color: var(--font-color);
+            font-family: var(--roboto-font);
+            padding-left: 30px;
+            font-weight: 600;
+            font-size: 3rem;
+        }
 
+        .page-filme {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            justify-items: center;
+            gap: 10px;
+            width: 100%;
+
+            .filme {
+                height: 95%;
+                width: auto;
+                margin-block: 10px;
+
+                img {
+                    object-fit: contain;
+                }
+
+            }
+
+        }
+
+    }
+
+    .pagination {
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: auto;
+        margin-top: 100px;
+        font-size: 1.5rem;
+
+        i {
+            font-size: 2rem;
+        }
+
+        .button-page {
+            width: 60px;
+            height: 60px;
+        }
+    
+    }
+
+    .titulo-filme {
+        font-size: 3rem;
+    }
+
+    .filme-sinopse {
+        font-size: 2rem;
+    }
+
+    #recomendacoes {
+        span {
+            font-size: 2rem;
+        }
+    }
+
+    .redes-sociais {
+        flex-direction: row;
+        justify-content: space-evenly;
+
+        .logo {
+            width: auto;
+        }
+
+    }
+
+    .links-importantes ul {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
 
 }
