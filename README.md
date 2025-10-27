@@ -2,13 +2,13 @@
 
 ## Preview do projeto
 
-![1420px](./img/tmdb_1420px.png)
-![768px](./img/tmdb_768px.png)
-![420px](./img/tmdb_420px.png)
+![](./img/tmdb_1420px.png)
+![](./img/tmdb_768px.png)
+![](./img/tmdb_420px.png)
 
 ---
 
-Bem-vindo aao projeto do seu maior entretenimento, o **TMDB**, um site de filmes simples integrado com a API ![TMDB](https://developer.themoviedb.org/docs/getting-started). O objetivo deste projeto foi testar minhas minhas habilidades com HTML, CSS, JavaScript, Lógica de programação, consumo de API's com fetch, e tratativa/manipulação de dados de retorno da API
+Bem-vindo aao projeto do seu maior entretenimento, o **TMDB**, um site de filmes simples integrado com a API [TMDB](https://developer.themoviedb.org/docs/getting-started). O objetivo deste projeto foi testar minhas minhas habilidades com HTML, CSS, JavaScript, Lógica de programação, consumo de API's com fetch, e tratativa/manipulação de dados de retorno da API
 
 O site apresenta navegação:
 
